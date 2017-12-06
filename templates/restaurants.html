@@ -1,7 +1,7 @@
 <html>
   <body>
     <h1>Restaurants</h1>
-    <a href="#"><h3>Create new restaurant</h3></a>
+    <a href='{{url_for('newRestaurant')}}'><h3>Create New Restaurant</h3></a>
     {% with messages = get_flashed_messages()%}
       {% if messages %}
         <ul>
@@ -16,8 +16,26 @@
 
     {% for restaurant in restaurants %}
       <h3>{{ restaurant.name }}</h3>
-      <a href="#">Edit Restaurant</a>
-      <a href="#">Delete Restaurant</a>
+      <a href='{{url_for('editRestaurant', restaurant_id = restaurant.id )}}'>Edit Restaurant</a>
+
+      <a href='{{url_for('deleteRestaurant', restaurant_id = restaurant.id)}}'>Delete Restaurant</a>
     {% endfor %}
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
