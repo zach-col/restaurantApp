@@ -1,0 +1,169 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-brand {
+    color: black;
+}
+
+#headerContainer {
+    position: relative;
+    margin-bottom: 90px;
+}
+
+#headerLink {
+  margin: 0 auto;
+  width: 200px;
+  padding:1px;
+}
+
+#headerText {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 16px 5px;
+    background: black;
+    background: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+}
+
+#headerTopText {
+    text-decoration: none;
+    color: red;
+    margin-top: 5%;
+    margin-bottom: 30px;
+}
+
+#headerBottomText {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+#headerImg {
+    width: 100%;
+    height: 100vh;
+}
+
+/* button to create restaurant */
+#createRestaurant {
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.removePadding{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/*  restaurant conainer */
+.restaurantContainer {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* restaurant name */
+.restaurantName {
+    color: black;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+/* restaurant link */
+.primary {
+    border-radius: 10px;
+    color: white;
+    background-color: #337ab7;
+    text-decoration: none;
+    padding: 5px 5px;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.primary:hover, .primary:active, .primary:focus {
+    color: #337ab7;
+    background-color: white;
+    text-decoration: none;
+    border: 1px solid #337ab7;
+
+}
+
+/* conainter for restaurant crud functionality */
+.linkCointainer {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* danger link*/
+.danger {
+    border-radius: 10px;
+    color: white;
+    background-color: #d9534f;
+    text-decoration: none;
+    padding: 5px 5px;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.danger:hover, .danger:active, .danger:focus {
+    color: #d9534f;
+    background-color: white;
+    text-decoration: none;
+    border: 1px solid #d9534f;
+}
+
+/* success link */
+.success {
+    border-radius: 10px;
+    color: white;
+    background-color: #5cb85c;
+    text-decoration: none;
+    padding: 5px 5px;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.success:hover, .success:active, .success:focus {
+    color: #5cb85c;
+    background-color: white;
+    text-decoration: none;
+    border: 1px solid #5cb85c;
+}
+
+/* scroll to top button */
+ #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 100%;
+}
+
+#myBtn:hover {
+    background-color: white;
+    color: black;
+}

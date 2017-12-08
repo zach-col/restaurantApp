@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Restaurant App</title>
+    <title>MenuNow</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,18 +10,23 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- custom css -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+    <!-- restaurants css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/restaurants.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!-- font awesome cdn -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- navbar css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css')}}">
 </head>
 <body>
 
 <!-- navbar -->
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fa fa-bars" styles="font-size: 30px; color:white;"></span>
   </button>
 
-<a href="/" class="navbar-brand">Restaurants</a>
+<a href="{{ url_for('showRestaurants')}}" class="navbar-brand">MenuNow</a>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       {% for restaurant in restaurants %}
@@ -30,18 +35,20 @@
       </li>
       {% endfor %}
     </ul>
-    <span class="navbar-text">
-      Navbar text with an inline element
-    </span>
   </div>
 </nav>
-<div class="container-fluid">
 
 {% block body %}
 {% endblock %}
 
-</div>
+<!-- scroll to top button -->
+ <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up" style="font-size:36px"></i>
+
+</button>
+
 <!-- fade in js -->
 <script type="text/javascript" src="{{ url_for('static', filename='Js/fadeIn.js')}}"></script>
+<!-- scroll to top js -->
+<script type="text/javascript" src="{{ url_for('static', filename='Js/scrollToTop.js')}}"></script>
 </body>
 </html>

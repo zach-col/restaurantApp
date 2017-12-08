@@ -1,0 +1,27 @@
+/* navbar brand name */
+.navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+    color: white;
+}
+/* navbar hover focus etc */
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover, .navbar-light .navbar-toggler:focus, .navbar-light .navbar-toggler:hover {
+    color: white;
+}
+
+/* navbar background */
+.bg-faded {
+    background-color: black;
+}
+
+/* nav mobile links */
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+/* nav mobile links on hover etc */
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: grey;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: white;
+}
