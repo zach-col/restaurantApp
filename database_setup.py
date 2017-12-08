@@ -21,6 +21,12 @@ class Restaurant(Base):
     # creating column
     id = Column(
         Integer, primary_key = True)
+    @property
+    def serialize(self):
+        return{
+            'id' : self.id,
+            'name' : self.name
+        }
 # creating database table class
 class MenuItem(Base):
     __tablename__ = 'menu_item'
@@ -46,11 +52,13 @@ class MenuItem(Base):
         #Return object data in json format
         return {
             'name' : self.name,
-            'description' : self.description,
             'id' : self.id,
-            'price' : self.price,
             'course' : self.course,
+            'price' : self.price,
+            'restaurant_id' : self.restaurant_id
         }
+
+
 
 
 # creating instance of engine with database

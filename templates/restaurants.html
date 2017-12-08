@@ -1,41 +1,32 @@
-<html>
-  <body>
-    <h1>Restaurants</h1>
-    <a href='{{url_for('newRestaurant')}}'><h3>Create New Restaurant</h3></a>
-    {% with messages = get_flashed_messages()%}
-      {% if messages %}
-        <ul>
-          {% for message in messages %}
-          <li>
-            <strong>{{ message }}</strong>
-          </li>
-          {%  endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+{% extends "index.html" %}
 
-    {% for restaurant in restaurants %}
-      <h3>{{ restaurant.name }}</h3>
-      <a href='{{url_for('editRestaurant', restaurant_id = restaurant.id )}}'>Edit Restaurant</a>
-
-      <a href='{{url_for('deleteRestaurant', restaurant_id = restaurant.id)}}'>Delete Restaurant</a>
-    {% endfor %}
-  </body>
-</html>
+{% block body %}
+<a href="{{url_for('newRestaurant', restaurants = restaurants)}}"><h3>Create New Restaurant</h3></a>
+<!-- flash messages -->
+{% with messages = get_flashed_messages()%}
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>
+        <strong>{{ message }}</strong>
+      </li>
+      {%  endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
 
 
+<div class="row">
+{% for restaurant in restaurants %}
+  <div class="col-md-4 col-xs-12">
+    <h3>{{ restaurant.name }}</h3>
+    <a href = "{{url_for('showMenu', restaurant_id = restaurant.id)}}">View Menu
+    </a>
+    <a href='{{url_for('editRestaurant', restaurant_id = restaurant.id )}}'>Edit Restaurant</a>
 
+    <a href="{{url_for('deleteRestaurant', restaurant_id = restaurant.id)}}">Delete Restaurant</a>
+  </div>
+{% endfor %}
+</div><!-- end of row -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% endblock %}

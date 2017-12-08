@@ -1,11 +1,19 @@
-<html>
-  <body>
-    <h1>Edit Menu Item</h1></br>
-    <form action="#" method="post">
-      Name:</br>
-      <input type="text" size="30" name="name" placeholder="{{  item.name }}">
-      <input type="submit" value="Create">
-      <a href="#">Cancel</a>
-    </form>
-  </body>
-</html>
+{% extends "index.html" %}
+
+{% block body %}
+  <h1>Edit item</h1></br>
+  <form action="{{ url_for('editMenuItem', restaurant_id = restaurant_id, menu_id = editItem.id) }}" method="post">
+
+    Name:</br>
+    <input type="text" size="30" name="name" placeholder="{{ editItem.name}}"></br></br>
+
+    Description:</br>
+    <input type="text" size="30" name="description" placeholder="{{ editItem.description }}"></br></br>
+
+    Price</br>
+    <input type="text" size="5" name="price" placeholder="{{ editItem.price }}"></br></br>
+
+    <input type="submit" value="Update Menu Item">
+    <a href="{{ url_for('showMenu', restaurant_id = restaurant_id)}}">Cancel</a>
+  </form>
+{% endblock %}
