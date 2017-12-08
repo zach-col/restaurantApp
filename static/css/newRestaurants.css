@@ -1,0 +1,16 @@
+.centerForm {
+  text-align: center;
+  margin-top: 5%;
+}
+
+/* link space */
+.restaurantMenuName {
+    text-align: center;
+    color: black;
+    margin-bottom: 100px;
+}
+
+/* form link for cancel */
+.cancelLink {
+    padding-left: 20px;
+}

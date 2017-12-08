@@ -1,7 +1,8 @@
 {% extends "index.html" %}
 
 {% block body %}
-  <h1> {{ restaurant.name }} </h1>
+<div class="container-fluid">
+  <h1 id="restaurantMenuName"> {{ restaurant.name }} </h1>
 
   {% with messages = get_flashed_messages()%}
     {% if messages %}
@@ -15,15 +16,27 @@
     {% endif %}
   {% endwith %}
 
-   <a href="{{ url_for('newMenuItem', restaurant_id = restaurant.id) }}">Create New Item</a>
+  <div class="createItem">
+      <a a href="{{ url_for('newMenuItem', restaurant_id = restaurant.id) }}" class="success">Create New Item</a>
+  </div>
+
   </br></br>
-  {% for item in items %}
-    <h3>{{ item.name }}</h3>
-    <h3>{{ item.description }}</h3>
-    <h3>{{ item.price }}</h3>
-    <h3>{{ item.course }}</h3>
-    <a href="{{ url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = item.id)}}">Edit</a>
-    <a href="{{ url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = item.id)}}">Delete</a>
-    </br></br>
-  {% endfor %}
+  <div class="row">
+    {% for item in items %}
+      <div class="col-md-6 col-xs-12 menuItemContainer">
+        <h2 class="menuItemName">{{ item.name }}</h2>
+        <h4 class="menuItemDescription">{{ item.description }}</h4>
+        <h3 class="menuItemPrice">{{ item.price }}</h3>
+        <h3 class="menuItemCourse">{{ item.course }}</h3>
+        <div class="createItem">
+          <a href="{{ url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = item.id)}}" class="primary">Edit</a>
+          </div>
+          <div class="createItem">
+          <a href="{{ url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = item.id)}}" class="danger">Delete</a>
+        </div>
+        </br></br>
+      </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
