@@ -6,10 +6,10 @@
   <form action="{{ url_for('newRestaurant', restaurant_id =  restaurant_id)}}" method="post">
     <div class="form-group centerForm">
       <!-- header -->
-      <h1 class="centerRestaurant">Create new restaurant</h1>
+      <h1 class="statementHeader">Create new restaurant</h1>
       <label for="name">Name:</label>
       <input type="text" size="30" name="name">
-      <button type="submit" class="btn btn-primary center-block">Submit</button>
+      <button type="submit" class="btn btn-success center-block">Submit</button>
       <a href="{{ url_for('showRestaurants')}}" class="cancelLink">Cancel</a>
     </div>
   </form>

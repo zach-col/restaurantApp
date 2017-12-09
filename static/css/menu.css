@@ -36,3 +36,16 @@
     color: green;
     margin-bottom: 30px;
 }
+
+/* statement header used for any statements */
+.statementHeader {
+    color: black;
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 35px;
+}
+
+/* used for centering links*/
+.centerLinks{
+    text-align: center;
+}

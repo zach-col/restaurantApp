@@ -124,3 +124,8 @@
 .centerText {
     text-align: center;
 }
+
+.centerForm {
+  text-align: center;
+  margin-top: 5%;
+}

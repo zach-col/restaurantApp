@@ -1,10 +1,13 @@
 {% extends "index.html" %}
 
 {% block body %}
-<h1>Are you sure you want to delete {{ item.name }}?</h1>
-<form action="{{ url_for('deleteMenuItem', restaurant_id = restaurant_id, menu_id = item.id)}}" method="post">
-  <input type="submit" value="delete">
-  <a href="{{ url_for('showMenu', restaurant_id = restaurant_id, menu_id = menu_id)}}">Cancel</a>
-</form>
+<div class="container">
+  <h1 class="statementHeader">Are you sure you want to delete {{ item.name }}?</h1>
 
+  <form action="{{ url_for('deleteMenuItem', restaurant_id = restaurant_id, menu_id = item.id)}}" method="post" class="centerLinks">
+    <button type="submit" class="btn btn-danger">Submit</button>
+    <a href="{{ url_for('showMenu', restaurant_id = restaurant_id)}}" class="cancelLink">Cancel</a>
+  </form>
+
+</div>
 {% endblock %}

@@ -1,19 +1,38 @@
 {% extends "index.html" %}
 
 {% block body %}
-  <h1>Edit item</h1></br>
-  <form action="{{ url_for('editMenuItem', restaurant_id = restaurant_id, menu_id = editItem.id) }}" method="post">
+<div class="container">
+  <h1 class="statementHeader">Edit item</h1></br>
+  <form action="{{ url_for('editMenuItem', restaurant_id = restaurant_id, menu_id = editItem.id) }}" method="post" class="form-horizontal">
 
-    Name:</br>
-    <input type="text" size="30" name="name" placeholder="{{ editItem.name}}"></br></br>
 
-    Description:</br>
-    <input type="text" size="30" name="description" placeholder="{{ editItem.description }}"></br></br>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
 
-    Price</br>
-    <input type="text" size="5" name="price" placeholder="{{ editItem.price }}"></br></br>
+      <div class="col-sm-6">
+        <input type="text" size="30" class="form-control" placeholder="{{ editItem.name }}" name="name">
+      </div>
+    </div>
 
-    <input type="submit" value="Update Menu Item">
-    <a href="{{ url_for('showMenu', restaurant_id = restaurant_id)}}">Cancel</a>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="description">Description:</label>
+
+      <div class="col-sm-6">
+        <input type="text" size="30" class="form-control" placeholder="{{ editItem.description }}" name="description">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="price">Price:</label>
+
+      <div class="col-sm-6">
+        <input type="text" size="5" class="form-control" placeholder="{{ editItem.price }}" name="price">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{{ url_for('showMenu', restaurant_id = restaurant_id)}}" class="cancelLink">Cancel</a>
+
   </form>
+</div>
 {% endblock %}

@@ -1,24 +1,57 @@
 {% extends "index.html" %}
 
 {% block body %}
-  <h1>New Menu Item for {{ restaurant.name }}</h1>
-  <form action="{{ url_for('newMenuItem', restaurant_id=restaurant_id) }}" method="post">
-    Name:</br>
-    <input type="text" size="30" name="name"></br></br>
+<div class="container">
+  <h1 class="statementHeader">New Menu Item for {{ restaurant.name }}</h1>
+  <form action="{{ url_for('newMenuItem', restaurant_id=restaurant_id) }}" method="post" class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
 
-    Description:</br>
-    <input type="text" size="30" name="description"></br></br>
+      <div class="col-sm-6">
+        <input type="text" size="30" class="form-control" placeholder="Enter Name" name="name">
+      </div>
+    </div>
 
-    Price</br>
-    <input type="text" size="5" name="price"></br></br>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="description">Description:</label>
 
-    Course:</br>
-    <input type="radio" name="course" value="appetizer" >Appetizer</br>
-    <input type="radio" name="course" value="entree">Entree</br>
-    <input type="radio" name="course" value="dessert">Dessert</br>
-    <input type="radio" name="course" value="beverage">Beverage</br></br>
-    <input type="submit" value="create">
-    <a href="{{ url_for('showMenu', restaurant_id = restaurant_id)}}">Cancel</a>
+      <div class="col-sm-6">
+        <input type="text" size="30" class="form-control" placeholder="Enter Description" name="description">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="price">Price:</label>
+
+      <div class="col-sm-6">
+        <input type="text" size="5" class="form-control" placeholder="Enter Price" name="price">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="radio-inline">
+        <input type="radio" name="course" value="appetizer">Appetizer
+        <br>
+      </label>
+
+      <label class="radio-inline">
+        <input type="radio" name="course" value="entree">Entree
+      </label>
+
+      <label class="radio-inline">
+        <input type="radio" name="course" value="dessert">Dessert
+      </label>
+
+      <label class="radio-inline">
+        <input type="radio" name="course" value="beverage">Beverage
+      </label>
+    </div>
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+      <a href="{{ url_for('showMenu', restaurant_id = restaurant_id)}}" class="cancelLink">Cancel</a>
+
   </form>
-
+</div>
 {% endblock %}
