@@ -116,16 +116,19 @@
     border-radius: 100%;
 }
 
+/* scroll to top button */
 #myBtn:hover {
     background-color: white;
     color: black;
 }
 
+/* to center text */
 .centerText {
     text-align: center;
 }
 
+/* to center all forms */
 .centerForm {
-  text-align: center;
   margin-top: 5%;
+  margin: 0 auto;
 }

@@ -5,34 +5,27 @@
   <h1 class="statementHeader">Edit item</h1></br>
   <form action="{{ url_for('editMenuItem', restaurant_id = restaurant_id, menu_id = editItem.id) }}" method="post" class="form-horizontal">
 
-
+  <div class="row">
+    <div class="col-xs-12 centerForm">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="name">Name:</label>
-
-      <div class="col-sm-6">
-        <input type="text" size="30" class="form-control" placeholder="{{ editItem.name }}" name="name">
-      </div>
+      <label class="control-label" for="name">Name:</label>
+      <input type="text" size="30" class="form-control" placeholder="{{ editItem.name }}" name="name">
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="description">Description:</label>
-
-      <div class="col-sm-6">
-        <input type="text" size="30" class="form-control" placeholder="{{ editItem.description }}" name="description">
-      </div>
+      <label class="control-label" for="description">Description:</label>
+      <input type="text" size="30" class="form-control" placeholder="{{ editItem.description }}" name="description">
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="price">Price:</label>
-
-      <div class="col-sm-6">
-        <input type="text" size="5" class="form-control" placeholder="{{ editItem.price }}" name="price">
-      </div>
+      <label class="control-label" for="price">Price:</label>
+      <input type="text" size="5" class="form-control" placeholder="{{ editItem.price }}" name="price">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
     <a href="{{ url_for('showMenu', restaurant_id = restaurant_id)}}" class="cancelLink">Cancel</a>
-
+  </div>
+  </div>
   </form>
 </div>
 {% endblock %}
